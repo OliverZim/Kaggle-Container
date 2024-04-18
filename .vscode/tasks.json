@@ -1,0 +1,119 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "kaggle: dataset - download",
+            "type": "shell",
+            "command": "kaggle datasets download ${input:userName}/${input:datasetName} -p ${input:datasetName} --unzip --force",
+            "options": {
+                "cwd": "/kaggle/input"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "kaggle: competition - download",
+            "type": "shell",
+            "command": "kaggle competitions download -c ${input:selectCompetition}",
+            "options": {
+                "cwd": "/kaggle/input"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "kaggle: competition - submit solution",
+            "type": "shell",
+            "command": "kaggle competitions submit -c ${input:selectCompetition} -f ${input:selectFile} -m ${input:submissionMessage}",
+            "options": {
+                "cwd": "/kaggle/working"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "kaggle: competition - list submissions",
+            "type": "shell",
+            "command": "kaggle competitions submissions -c ${input:selectCompetition}",
+            "options": {
+                "cwd": "/kaggle/working"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "kaggle: notebook - add metadata",
+            "type": "shell",
+            "command": "kaggle kernels init -p /kaggle"
+        },
+        {
+            "label": "kaggle: notebook - push to remote",
+            "type": "shell",
+            "command": "kaggle kernels push -p /kaggle",
+            "problemMatcher": []
+        },
+        {
+            "label": "kaggle: notebook - pull from remote",
+            "type": "shell",
+            "command": "kaggle kernels pull ${input:kernel} -p /kaggle -m"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "userName",
+            "description": "Kaggle username"
+        },
+        {
+            "type": "promptString",
+            "id": "datasetName",
+            "description": "Kaggle dataset name"
+        },
+        {
+            "id": "selectCompetition",
+            "type": "command",
+            "command": "extension.commandvariable.promptStringRemember",
+            "args": {
+                "key": "competition",
+                "description": "Which competition do you want to submit to?",
+            }
+        },
+        {
+            "id": "selectFile",
+            "type": "command",
+            "command": "extension.commandvariable.pickStringRemember",
+            "args": {
+                "description": "Which file to submit?",
+                "options": [
+                    [
+                        "Use previous file",
+                        "${remember:submissionFile}"
+                    ],
+                    [
+                        "Pick a file",
+                        "${pickFile:submissionFile}"
+                    ]
+                ],
+                "default": null,
+                "pickFile": {
+                    "submissionFile": {
+                        "description": "Which file?",
+                        "include": "working/**",
+                        "showDirs": false,
+                        "keyRemember": "submissionFile"
+                    }
+                }
+            }
+        },
+        {
+            "type": "promptString",
+            "id": "submissionMessage",
+            "description": "Message for the submission"
+        },
+        {
+            "id": "kernel",
+            "type": "command",
+            "command": "extension.commandvariable.promptStringRemember",
+            "args": {
+                "key": "kernel",
+                "description": "Which kernel do you want to pull <username>/<notebookName> ?",
+            }
+        }
+    ]
+}
