@@ -35,5 +35,6 @@
     },
     "features": {
         "ghcr.io/devcontainers/features/git:1": {}
-    }
+    },
+    "postAttachCommand": "bash /kaggle/.devcontainer/config-git.sh"
 }
