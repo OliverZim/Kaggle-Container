@@ -1,0 +1,3 @@
+# Kaggle Container
+## Motivation
+Data Science projects typically use a lot of libraries to accomplish their goals. Managing all of these dependencies can become cumbersome. In addition to this, they can require quite a lot of computational resources. The goal of this template is to provide an easy to use, reproducible environment to use for Kaggle competitions and Data Science projects in general. It allows the user to develop python scripts and jupyter notebooks locally with features like code completion, intellisense and also the ability for debugging code. Afterwards, it simplifies the process of pushing the created project to the Kaggle platform to publish them or run them with GPU support.

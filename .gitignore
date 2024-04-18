@@ -1,3 +1,6 @@
 kaggle.json
 input/*
 working/*
+
+# keep README files for documentations
+!*/README.md
