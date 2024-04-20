@@ -5,11 +5,6 @@
     "forwardPorts": [8888],
     "shutdownAction": "none",
 
-    "mounts": [
-        "source=${localWorkspaceFolder}/kaggle.json,target=/root/.kaggle/kaggle.json,type=bind,consistency=cached",
-        // "source=${localWorkspaceFolder}/.gitignore,target=/kaggle/.gitignore,type=bind,consistency=cached",
-      ],
-
     "workspaceMount": "source=${localWorkspaceFolder},target=/kaggle,type=bind",
     "workspaceFolder": "/kaggle",
     
@@ -36,5 +31,6 @@
     "features": {
         "ghcr.io/devcontainers/features/git:1": {}
     },
-    "postAttachCommand": "bash /kaggle/.devcontainer/config-git.sh"
+    "postAttachCommand": "bash /kaggle/.devcontainer/config-git.sh",
+    "runArgs": ["--env-file", ".devcontainer/.env"]
 }

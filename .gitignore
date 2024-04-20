@@ -1,6 +1,6 @@
-kaggle.json
 input/*
 working/*
+*/.env
 
 # keep README files for documentations
 !*/README.md
