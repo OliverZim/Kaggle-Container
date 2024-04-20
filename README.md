@@ -62,7 +62,9 @@ The steps for this are the following:
 }
 ``` 
 Now you just need to fill in the required fields (e.g. insert the competition name in case you are using the dataset of a competition). If you want to use GPU acceleration also make sure to set the entry to "true".
+
 2. After filling in the fields simply run the task ```kaggle: notebook - push to remote``` Your notebook should now be pushed to the Kaggle platform and execute there automatically. 
+
 3. Now you can make changes to your code and once you want to publish the results simply repeat step 2. 
 
 ### Submit your results
