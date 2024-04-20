@@ -21,7 +21,7 @@ KAGGLE_KEY=INSERT_KEY_HERE
 Make sure to replace the placeholders with your actual values. The .env file is excluded from version control by default so you do not have to worry about leaking private information.
 
 ### Version Control
-Another advantage that local development offers is the possibility for version control. In order to have version control properly configured you will need to change your name and email in [./devcontainer/config-git.sh](.devcontainer/config-git.sh).
+Another advantage that local development offers is the possibility for version control. In order to have version control properly configured you will have to add your name (GIT_NAME=) and email (GIT_EMAIL=) to your .env file.
 
 ## Usage
 This template is supposed to help you with the participation in Kaggle challenges. For this we will describe a simple workflow on how to participate in a competition.

@@ -1,20 +1,13 @@
 #!/bin/bash
 
-# Change values here: 
-
-# Set your values for name and email
-GIT_NAME="INSERT_YOUR_NAME_HERE"
-GIT_EMAIL="INSERT_YOUR_EMAIL_HERE"
-
-
 # DO NOT CHANGE BELOW THIS LINE
 # ------------------------------
 
 # Check if the name variable is still the default, if not, set it
-if [ "${GIT_NAME}" == "INSERT_YOUR_NAME_HERE" ]; then
+if [ -z "${GIT_NAME}" ]; then
     echo ""
     echo "Please provide your own name for version control with git"
-    echo "To do so change the variable GIT_NAME in the file .devcontainer/config-git.sh"
+    echo "To do so add the variable GIT_NAME in the file .devcontainer/.env"
     echo ""
 else
     # Set Git configuration for name
@@ -26,7 +19,7 @@ fi
 if [ "${GIT_EMAIL}" == "INSERT_YOUR_EMAIL_HERE" ]; then
     echo ""
     echo "Please provide your own email for version control with git"
-    echo "To do so change the variable GIT_EMAIL in the file .devcontainer/config-git.sh"
+    echo "To do so add the variable GIT_EMAIL in the file .devcontainer/.env"
     echo ""
 else
     # Set Git configuration for name
