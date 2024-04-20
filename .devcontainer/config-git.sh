@@ -16,7 +16,7 @@ else
 fi
 
 # Check if the email variable is still the default, if not, set it
-if [ "${GIT_EMAIL}" == "INSERT_YOUR_EMAIL_HERE" ]; then
+if [ -z "${GIT_EMAIL}" ]; then
     echo ""
     echo "Please provide your own email for version control with git"
     echo "To do so add the variable GIT_EMAIL in the file .devcontainer/.env"
