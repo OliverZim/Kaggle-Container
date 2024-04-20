@@ -37,7 +37,7 @@ For basically every competition there is at least training data provided which y
 This will download the data of the challenge into the input directory (typically the directory will be compressed). 
 
 ### Work with the data
-Next up for you is the experimentation phase. Write code, run experiments, see experiments, repeat and improve. You can put all your scripts and notebooks in the ```code``` directory. In your code make sure to access the input directory with the mounted path ```/input```. Now its your time to have fun and get creative. Once you need to save files (e.g model outputs) you can save them to the ```working``` directory mounted at ```/working```.
+Next up for you is the experimentation phase. Write code, run experiments, see experiments, repeat and improve. You can put all your scripts and notebooks in the ```code``` directory. In your code make sure to access the input directory with the mounted path ```/kaggle/input/...```. Now its your time to have fun and get creative. Once you need to save files (e.g model outputs) you can save them to the ```working``` directory mounted at ```/kaggle/working/...```.
 **Note:** In case you want to use different training logic in your locally executed code than the one running on the Kaggle platform you can use the ```DEVELOPMENT_MODE``` environment variable. I guide on how to do this and why it can be useful can be found [here](/code/README.md)
 
 ### Use Kaggles platform to run computationally intensive tasks (or: How to publish notebooks)
